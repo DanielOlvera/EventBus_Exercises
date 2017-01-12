@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daniel.eventbus_example.withoutEventBus.SenderFragment"
+    android:background="@color/redA100">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment One"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <EditText
+        android:id="@+id/wE_nameEdTxt"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/wE_senderBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF1744"
+        android:text="Click Me!"
+        android:textColor="@color/white"
+        android:layout_gravity="center"/>
+
+</FrameLayout>

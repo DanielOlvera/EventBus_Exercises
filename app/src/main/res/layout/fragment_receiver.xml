@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daniel.eventbus_example.withoutEventBus.ReceiverFragment"
+    android:background="@color/redA200">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment Two"
+        android:gravity="center"
+        android:textSize="30dp"/>
+    <TextView
+        android:id="@+id/wE_receiverTxtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clicks here!"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+
+</FrameLayout>
