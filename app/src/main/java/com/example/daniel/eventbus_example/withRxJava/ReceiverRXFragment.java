@@ -1,4 +1,4 @@
-package com.example.daniel.eventbus_example.withOtto;
+package com.example.daniel.eventbus_example.withRxJava;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,17 +10,21 @@ import android.widget.TextView;
 
 import com.example.daniel.eventbus_example.POJOevent.MessageEvent;
 import com.example.daniel.eventbus_example.R;
-import com.squareup.otto.Subscribe;
+
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * Created by Daniel on 1/12/17.
  */
 
-public class ReceiverOFragment extends Fragment {
+public class ReceiverRXFragment extends Fragment {
 
     private TextView nameTxtVw;
 
-    public ReceiverOFragment() {
+    private Subscription subscription;
+
+    public ReceiverRXFragment() {
     }
 
     @Nullable
@@ -38,22 +42,20 @@ public class ReceiverOFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-    }
-
-    @Subscribe
-    public void onMessage(MessageEvent event){
-        nameTxtVw.setText(event.getMessage());
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        OttoBus.getInstance().register(this);
+       subscription = MyRxBus.getInstance().getEvents().subscribe(new Action1<Object>() {
+           @Override
+           public void call(Object o) {
+               if(o instanceof MessageEvent){
+                   // do something
+                   nameTxtVw.setText(((MessageEvent) o).getMessage() + "!");
+               }
+           }
+       });
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        OttoBus.getInstance().unregister(this);
+        subscription.unsubscribe();
     }
 }

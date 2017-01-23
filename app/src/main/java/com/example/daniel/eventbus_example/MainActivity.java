@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.daniel.eventbus_example.withEventBus.WithEventBus;
 import com.example.daniel.eventbus_example.withOtto.WithOTTO;
+import com.example.daniel.eventbus_example.withRxJava.WithRxJava;
 import com.example.daniel.eventbus_example.withoutEventBus.WithoutEventBus;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), WithOTTO.class);
         startActivity(intent);
     }
+
+    public void wRxJava(View view) {
+        Intent intent = new Intent(getApplicationContext(), WithRxJava.class);
+        startActivity(intent);
+    }
 }
 
 /*
-Refeences:
+References:
 
     http://gunhansancar.com/ease-communication-between-activities-fragments-services/#content-8
  */

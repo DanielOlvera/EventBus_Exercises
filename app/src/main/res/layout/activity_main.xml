@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/m_woEventBus"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Without EventBus"
@@ -39,4 +39,12 @@
         android:layout_height="wrap_content"
         android:text="With OTTO"
         android:onClick="wOTTO"/>
+
+    <Button
+        android:id="@+id/m_wRxJava"
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="With RxJAVA"
+        android:onClick="wRxJava"/>
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.daniel.eventbus_example.withOtto;
+package com.example.daniel.eventbus_example.withRxJava;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,14 +17,13 @@ import com.example.daniel.eventbus_example.R;
  * Created by Daniel on 1/12/17.
  */
 
-public class SenderOFragment extends Fragment {
+public class SenderRXFragment extends Fragment {
 
-    private static final String TAG = "SenderOFragTAG_";
-    private Button senderOBtn;
-    private EditText nameOEdTxt;
+    private static final String TAG = "SenderRXFragmentTAG_";
+    private Button senderRxBtn;
+    private EditText nameRxEdTxt;
 
-
-    public SenderOFragment() {
+    public SenderRXFragment() {
     }
 
     @Nullable
@@ -32,8 +31,6 @@ public class SenderOFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_sender, container, false);
-
-
         return view;
     }
 
@@ -41,20 +38,12 @@ public class SenderOFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        nameOEdTxt = (EditText) getView().findViewById(R.id.wE_nameEdTxt);
-        senderOBtn = (Button) getView().findViewById(R.id.wE_senderBtn);
+        nameRxEdTxt = (EditText) getView().findViewById(R.id.wE_nameEdTxt);
+        senderRxBtn = (Button) getView().findViewById(R.id.wE_senderBtn);
 
-        senderOBtn.setOnClickListener(view -> OttoBus.getInstance()
-                .post(new MessageEvent("Welcome " + nameOEdTxt.getText().toString())));
-
-            //---- Without lambda expressions ----
-            /*
-            new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                OttoBus.getInstance().post(new MessageEvent("Welcome " + nameOEdTxt.getText().toString()));
-            }
-             */
+        senderRxBtn.setOnClickListener(view -> MyRxBus
+                .getInstance()
+                .post(new MessageEvent("Welcome " + nameRxEdTxt.getText().toString())));
 
         Log.d(TAG, "onActivityCreated: ");
     }
