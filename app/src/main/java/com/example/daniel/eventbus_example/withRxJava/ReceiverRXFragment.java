@@ -42,13 +42,10 @@ public class ReceiverRXFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-       subscription = MyRxBus.getInstance().getEvents().subscribe(new Action1<Object>() {
-           @Override
-           public void call(Object o) {
-               if(o instanceof MessageEvent){
-                   // do something
-                   nameTxtVw.setText(((MessageEvent) o).getMessage() + "!");
-               }
+       subscription = MyRxBus.getInstance().getEvents().subscribe(o -> {
+           if(o instanceof MessageEvent){
+               // do something
+               nameTxtVw.setText(((MessageEvent) o).getMessage() + "!");
            }
        });
     }
