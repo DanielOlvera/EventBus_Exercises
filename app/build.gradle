@@ -42,4 +42,7 @@ dependencies {
     // ---- RxJava/RxAndroid - Event Bus
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
+
+    // ---- RxBus
+    compile 'com.hwangjr.rxbus:rxbus:1.0.5'
 }

@@ -27,7 +27,14 @@
             android:name=".withOtto.WithOTTO"
             android:label="OTTO Event Bus"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".withRxJava.WithRxJava"></activity>
+        <activity
+            android:name=".withRxJava.WithRxJava"
+            android:label="RxJava Event Bus"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".withRxBus.WithRxBus"
+            android:label="RxBus Event Bus"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

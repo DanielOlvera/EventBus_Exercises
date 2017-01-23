@@ -1,10 +1,7 @@
 package com.example.daniel.eventbus_example.withRxJava;
 
-import com.example.daniel.eventbus_example.POJOevent.MessageEvent;
-
 import rx.Observable;
 import rx.Subscription;
-import rx.functions.Action;
 import rx.functions.Action1;
 import rx.subjects.PublishSubject;
 import rx.subjects.SerializedSubject;
@@ -59,6 +56,10 @@ public class MyRxBus {
 /*
 References:
     https://blog.metova.com/how-to-use-rxjava-as-an-event-bus/
+    https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba#.5nts9or2o
+    https://quangson8128.github.io/2016/06/23/rxbus-android/
+    https://github.com/kaushikgopal/RxJava-Android-Samples/blob/master/app/src/main/java/com/morihacky/android/rxjava/rxbus/RxBusDemo_Bottom3Fragment.java
+    https://github.com/metova/rxjava-bus-example/blob/master/src/main/java/com/metova/rxjavaexample/Main.java
  */
 
 /*
